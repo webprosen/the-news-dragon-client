@@ -7,7 +7,7 @@ const RightNav = () => {
     return (
         <div>
             <div className='mt-4 mb-4'>
-                <h4>Login With</h4>
+                <h4 className='mb-3'>Login With</h4>
                 <div className='mb-2'>
                     <Button variant="outline-primary"><FaGoogle></FaGoogle> Login with Google</Button>
                 </div>
@@ -16,7 +16,7 @@ const RightNav = () => {
                 </div>
             </div>
             <div className='mb-4'>
-                <h4>Find Us On</h4>
+                <h4 className='mb-3'>Find Us On</h4>
                 <ListGroup>
                     <ListGroup.Item><FaFacebook></FaFacebook> Facebook</ListGroup.Item>
                     <ListGroup.Item><FaTwitter></FaTwitter> Twitter</ListGroup.Item>
