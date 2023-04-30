@@ -4,6 +4,10 @@ import moment from 'moment';
 import { Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import Marquee from "react-fast-marquee";
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../../providers/AuthProvider';
+import { FaUserCircle } from 'react-icons/fa';
+import NavigationBar from '../NavigationBar/NavigationBar';
 
 const Header = () => {
     return (
@@ -19,24 +23,7 @@ const Header = () => {
                     Match Highlights: Germany vs Spain — as it happened
                 </Marquee>
             </div>
-            <div className='mt-3'>
-                <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                    <Container>
-                        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                        <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto">
-                            <Link className='text-white text-decoration-none me-3' to="/">Home</Link>
-                            <Link className='text-white text-decoration-none'>About</Link>
-                        </Nav>
-                        <Nav>
-                            <Nav.Link href="#deets">
-                                <Button variant="success">Login</Button>
-                            </Nav.Link>
-                        </Nav>
-                        </Navbar.Collapse>
-                    </Container>
-                </Navbar>
-            </div>
+            <NavigationBar></NavigationBar>
         </Container>
     );
 };
