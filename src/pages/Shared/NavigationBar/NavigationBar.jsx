@@ -5,7 +5,15 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const NavigationBar = () => {
-    const {user} = useContext(AuthContext);
+    const {user, logOut} = useContext(AuthContext);
+
+    const handleLogout = () => {
+        logOut()
+        .then()
+        .catch(error => {
+            console.log(error);
+        });
+    }
 
     return (
         <Container>
@@ -19,10 +27,10 @@ const NavigationBar = () => {
                             <Link className='text-white text-decoration-none'>About</Link>
                         </Nav>
                         <Nav>
-                            {user && <div className='text-white me-3 flex align-items-center'><FaUserCircle style={{'font-size': '2rem'}}></FaUserCircle></div>}
+                            {user && <div className='text-white me-3 flex align-items-center'><FaUserCircle style={{'fontSize': '2rem'}}></FaUserCircle></div>}
 
-                            {user? <Button variant="danger">Logout</Button> :
-                            <Button variant="success">Logout</Button>}
+                            {user? <Button onClick={handleLogout} variant="danger">Logout</Button> :
+                            <Link to="/login"><Button variant="success">Login</Button></Link>}
                         </Nav>
                         </Navbar.Collapse>
                     </Container>
